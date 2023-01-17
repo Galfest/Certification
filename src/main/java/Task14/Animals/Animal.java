@@ -1,17 +1,21 @@
 package Task14.Animals;
 
+import java.util.Arrays;
+
 public class Animal {
 
-    public String[] commands = new String[]{"подает голос", "бегает", "прыгает"};
+//    public String[] commands = new String[]{"подает голос", "бегает", "прыгает"};
 
-    Animal animal = new Animal();
+//    private static Animal animal;
+//
+//
+//    public static synchronized Animal getInstance() {
+//        if (animal == null) {
+//            animal = new Dog();
+//        }
+//        return animal;
+//    }
 
-    public void run(boolean run){
-    }
 
-    public void voice(boolean voice){
-    }
 
-    public void jump(boolean jump){
-    }
 }

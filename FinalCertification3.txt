@@ -1,0 +1,54 @@
+CREATE SCHEMA `humans_friends` ;
+
+CREATE TABLE `animals`.`humans_frinds` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `type` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`));
+
+
+INSERT INTO `animals`.`humans_frinds` (`type`) VALUES ('home_animals');
+INSERT INTO `animals`.`humans_frinds` (`type`) VALUES ('pack_animals');
+
+
+CREATE TABLE `animals`.`dogs` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `id_humans_frinds` INT NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  `command` VARCHAR(45) NOT NULL,
+  `birth_date` DATE NOT NULL,
+  PRIMARY KEY (`id`));
+
+
+INSERT INTO `animals`.`dogs` (`id_humans_frinds`, `name`, `command`, `birth_date`) VALUES ('1', 'Sharik', 'bark', '12.11.2022');
+INSERT INTO `animals`.`dogs` (`id_humans_frinds`, `name`, `command`, `birth_date`) VALUES ('1', 'Bobik', 'bark', '13.11.2022');
+
+
+ALTER TABLE `animals`.`dogs` 
+ADD INDEX `id_humans_friends_idx` (`id_humans_frinds` ASC) VISIBLE;
+;
+ALTER TABLE `animals`.`dogs` 
+ADD CONSTRAINT `id_humans_friends`
+  FOREIGN KEY (`id_humans_frinds`)
+  REFERENCES `animals`.`humans_frinds` (`id`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+Аналогично заполняем cats, hamsters, hors, camel, dankey
+
+
+-----------------------------------------------------------------------------------------
+
+
+CREATE TABLE `animals`.`cats` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `id_humans_frinds` INT NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  `command` VARCHAR(45) NOT NULL,
+  `birth_date` DATE NOT NULL,
+  PRIMARY KEY (`id`));
+
+INSERT INTO `animals`.`cats` (`id_humans_frinds`, `name`, `command`, `birth_date`) VALUES ('1', 'Murzik', 'Meow', '2021.10.21');
+INSERT INTO `animals`.`cats` (`id_humans_frinds`, `name`, `command`, `birth_date`) VALUES ('1', 'Barsik', 'Meow', '2022.11.23');
+
+
+

@@ -20,10 +20,5 @@ public class Dog extends HomeAnimal {
         this.commands = commands;
     }
 
-//    public static
-
-//    public static String[] (String command){
-//
-//    }
 }
 

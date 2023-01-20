@@ -2,8 +2,7 @@ package Task14.System;
 
 import Task14.Animals.*;
 
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 
 
@@ -38,7 +37,6 @@ public class Start {
         }
     }
 
-
     public static void name() {
         String animalName = "";
         System.out.println("Введите название животного");
@@ -67,36 +65,6 @@ public class Start {
                 e.printStackTrace();
             }
         }
-//    public static Map<String, Object> returnFieldsWithValues(Field[] fields) {
-//
-//        Map<String, Object> map = null;
-//        try {
-//            map = new HashMap<>();
-//            for (Field field : fields) {
-//                field.setAccessible(true);
-//
-//                if (!field.getType().isPrimitive() &&
-//                        !field.getType().getSimpleName().equals("String") &&
-//                        !field.getType().getSimpleName().equals("Integer") &&
-//                        !field.getType().getSimpleName().equals("Boolean") &&
-//                        !field.getType().getSimpleName().equals("Enum") &&
-//                        !field.getType().getSimpleName().equals("Double") &&
-//                        !field.getType().getSimpleName().equals("Float") &&
-//                        !field.getType().getSimpleName().equals("Long")) {
-//
-//                    map.putAll(returnFieldsWithValues(field.getType().getDeclaredFields()));
-//
-//                } else {
-//                    map.put(field.getName(), field.getType().getSimpleName());
-//                }
-//            }
-//        } catch (SecurityException e) {
-//            e.printStackTrace();
-//        } catch (IllegalArgumentException e) {
-//            e.printStackTrace();
-//        }
-//        return map;
-//    }
     }
 
     public static void commands() {
@@ -153,37 +121,109 @@ public class Start {
                 Scanner scanner1 = new Scanner(System.in);
                 String command = scanner1.nextLine();
                 Dog dog = new Dog();
-                String[] arr = dog.getArr();
                 String[] arr1 = new String[dog.getArr().length + 1];
                 for (int i = 0; i <= arr1.length; i++) {
-                    arr1[arr.length - 1] = command;
+                    arr1[arr1.length - 1] = command;
                 }
-                System.out.println("Новый набор команд:");
-                System.out.println(Arrays.toString(arr1));
-
-//                FileWriter fileWriter = new FileWriter("CommandsForDog");
-//                fileWriter.write(String.valueOf(newCommands));
-//
-                System.out.println(Arrays.toString(arr));
+                writeToTxt(dog.getArr(), "src/main/resources/oldCommandsForDog");
+                System.out.println("Новая команда - " + command);
+                FileWriter writer = new FileWriter("commandsForDog", true);
+                String text = command;
+                writer.write(text);
+                writer.flush();
                 break;
             case (2):
-//                Код2;
+                System.out.println("Введите название новой команды");
+                Scanner scanner2 = new Scanner(System.in);
+                String command2 = scanner2.nextLine();
+                Cat cat = new Cat();
+                String[] arr2 = new String[cat.getArr().length + 1];
+                for (int i = 0; i <= arr2.length; i++) {
+                    arr2[arr2.length - 1] = command2;
+                }
+                writeToTxt(cat.getArr(), "src/main/resources/oldCommandsForCat");
+                System.out.println("Новая команда - " + command2);
+                FileWriter writer2 = new FileWriter("commandsForCat", true);
+                String text2 = command2;
+                writer2.write(text2);
+                writer2.flush();
                 break;
             case (3):
-//                КодN;
+                System.out.println("Введите название новой команды");
+                Scanner scanner3 = new Scanner(System.in);
+                String command3 = scanner3.nextLine();
+                Hamster hamster = new Hamster();
+                String[] arr3 = new String[hamster.getArr().length + 1];
+                for (int i = 0; i <= arr3.length; i++) {
+                    arr3[arr3.length - 1] = command3;
+                }
+                writeToTxt(hamster.getArr(), "src/main/resources/oldCommandsForHamster");
+                System.out.println("Новая команда - " + command3);
+                FileWriter writer3 = new FileWriter("commandsForHamster", true);
+                String text3 = command3;
+                writer3.write(text3);
+                writer3.flush();
                 break;
             case  (4):
-//                Код1;
+                System.out.println("Введите название новой команды");
+                Scanner scanner4 = new Scanner(System.in);
+                String command4 = scanner4.nextLine();
+                Hors hors = new Hors();
+                String[] arr4 = new String[hors.getArr().length + 1];
+                for (int i = 0; i <= arr4.length; i++) {
+                    arr4[arr4.length - 1] = command4;
+                }
+                writeToTxt(hors.getArr(), "src/main/resources/oldCommandsForHors");
+                System.out.println("Новая команда - " + command4);
+                FileWriter writer4 = new FileWriter("commandsForHors", true);
+                String text4 = command4;
+                writer4.write(text4);
+                writer4.flush();
                 break;
             case  (5):
-//                Код1;
+                System.out.println("Введите название новой команды");
+                Scanner scanner5 = new Scanner(System.in);
+                String command5 = scanner5.nextLine();
+                Camel camel = new Camel();
+                String[] arr5 = new String[camel.getArr().length + 1];
+                for (int i = 0; i <= arr5.length; i++) {
+                    arr5[arr5.length - 1] = command5;
+                }
+                writeToTxt(camel.getArr(), "src/main/resources/oldCommandsForHamster");
+                System.out.println("Новая команда - " + command5);
+                FileWriter writer5 = new FileWriter("commandsForHamster", true);
+                String text5 = command5;
+                writer5.write(text5);
+                writer5.flush();
                 break;
             case  (6):
-//                Код1;
+                System.out.println("Введите название новой команды");
+                Scanner scanner6 = new Scanner(System.in);
+                String command6 = scanner6.nextLine();
+                Dankey dankey = new Dankey();
+                String[] arr6 = new String[dankey.getArr().length + 1];
+                for (int i = 0; i <= arr6.length; i++) {
+                    arr6[arr6.length - 1] = command6;
+                }
+                writeToTxt(dankey.getArr(), "src/main/resources/oldCommandsForHamster");
+                System.out.println("Новая команда - " + command6);
+                FileWriter writer6 = new FileWriter("commandsForHamster", true);
+                String text6 = command6;
+                writer6.write(text6);
+                writer6.flush();
                 break;
             default:
-//                КодВыбораПоУмолчанию;
                 break;
         }
+    }
+
+    public static void writeToTxt (String [] array, String filePathName) throws IOException{
+        BufferedWriter writer = new BufferedWriter(new FileWriter(new File(filePathName)));
+        for (int i = 0; i < array.length; i++) {
+                writer.write(String.valueOf(array[i]));
+                writer.write(" ");
+            writer.write("\r\n");
+        }
+        writer.flush();
     }
 }

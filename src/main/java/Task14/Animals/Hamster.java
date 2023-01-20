@@ -8,6 +8,10 @@ public class Hamster extends HomeAnimal{
     }
     public String[] commands = new String[]{"пищит", "бегает в колесе", "ест"};
 
+    public String[] getArr(){
+        return commands;
+    }
+
     public String[] getCommands() {
         System.out.println(Arrays.toString(commands));
         return commands;

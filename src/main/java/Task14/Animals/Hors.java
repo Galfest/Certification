@@ -9,6 +9,10 @@ public class Hors extends PackAnimal{
 
     public String[] commands = new String[]{"ест", "бегает", "прыгает через барьеры"};
 
+    public String[] getArr(){
+        return commands;
+    }
+
     public String[] getCommands() {
         System.out.println(Arrays.toString(commands));
         return commands;

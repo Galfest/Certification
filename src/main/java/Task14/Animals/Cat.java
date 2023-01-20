@@ -10,6 +10,10 @@ public class Cat extends HomeAnimal {
     }
     public String[] commands = new String[]{"мяукает", "бегает", "прыгает"};
 
+    public String[] getArr(){
+        return commands;
+    }
+
     public String[] getCommands() {
         System.out.println(Arrays.toString(commands));
         return commands;

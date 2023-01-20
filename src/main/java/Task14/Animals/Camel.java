@@ -9,6 +9,10 @@ public class Camel extends PackAnimal{
 
     public String[] commands = new String[]{"плюет", "бегает", "лежит"};
 
+    public String[] getArr(){
+        return commands;
+    }
+
     public String[] getCommands() {
         System.out.println(Arrays.toString(commands));
         return commands;
